@@ -1,7 +1,7 @@
 import React from 'react';
 
 //import a helper function that will check if the email is valid
-import { validateEmail } from '../../utils/helpers.js';
+import { validateEmail } from '../utils/helpers.js';
 
 export default function Contact(props) {
   // Create state variables for the fields in the form
