@@ -11,6 +11,11 @@ export default function Contact(props) {
   
   const [errorMessage, setErrorMessage] = useState('');
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    
+  }
+
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
@@ -34,8 +39,8 @@ export default function Contact(props) {
       <div className="form-group">
         <label htmlFor="name">Name*:</label>
         <input
-          onChange={props.handleInputChange}
-          value={props.value}
+          onChange={handleInputChange}
+          value={value}
           name="name"
           type="text" required
           className="form-control"
@@ -44,7 +49,7 @@ export default function Contact(props) {
         />
         <label htmlFor="email">Email*:</label>
         <input
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
           name="email"
           type="text" required
@@ -54,7 +59,7 @@ export default function Contact(props) {
         />
         <label htmlFor="message">Message*:</label>
         <textarea 
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
           value={props.value}
           name="message"
           type="text" required
@@ -67,7 +72,7 @@ export default function Contact(props) {
         
         <br />
         <button
-          onClick={props.handleFormSubmit}
+          onClick={handleFormSubmit}
           className="btn btn-primary"
           type="submit"
         >
