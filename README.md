@@ -1,5 +1,6 @@
 # my-react-portfolio
 I rebuilt my portfolio using React.
+Getting my new laptop up to speed. So far, I've installed node.js.
 useState was utilized
 
 ## Contact Page
