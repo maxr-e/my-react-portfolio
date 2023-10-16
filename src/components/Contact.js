@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import React, { useEffect, useState } from "react";
 
 //import a helper function that will check if the email is valid
 import { validateEmail } from '../utils/helpers.js';
@@ -8,8 +9,9 @@ export default function Contact(props) {
   // We are also setting their initial values to an empty string
   const [email, setEmail] = useState('');
   const [Name, setName] = useState('');
+  const [Message, setMessage] = useState('');
   
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('0');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +42,7 @@ export default function Contact(props) {
         <label htmlFor="name">Name*:</label>
         <input
           onChange={handleInputChange}
-          value={value}
+          value={props.value}
           name="name"
           type="text" required
           className="form-control"

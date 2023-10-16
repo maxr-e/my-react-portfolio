@@ -2,12 +2,12 @@ import React from "react";
 import './index.css';
 
 import { useState } from 'react';
-import Header from './components/Header';
-import Contact from './components/Contact';
-import Portfolio from './components/Portfolio';
-import Footer from './components/Footer';
-import Resume from './components/Resume';
-import About from './components/About';
+import Header from './components/Header.js';
+import Contact from './components/Contact.js';
+import Portfolio from './components/Portfolio.js';
+import Footer from './components/Footer.js';
+import Resume from './components/Resume.js';
+import About from './components/About.js';
 
 function App() {
     const [currentPage, handlePageChange] = useState('About');
