@@ -2,25 +2,27 @@ import React from "react";
 import './index.css';
 
 import { useState } from 'react';
+import { Contact } from './pages/Contact';
+import { Portfolio } from './pages/Portfolio';
+import { Resume } from './pages/Resume';
+import { About } from './pages/About';
+
 import Header from './components/Header';
-import Contact from './components/Contact';
-import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
-import Resume from './components/Resume';
-import About from './components/About';
+
 
 function App() {
     const [currentPage, handlePageChange] = useState('About');
     const renderPage = () => {
         //switch allows renderPage to render the current page
         switch (currentPage) {
-            case 'About Me':
+            case 'About':
                 return<About />;
-            case 'Contact Me':
+            case 'Contact':
                 return <Contact />;
-            case 'My Resume':
+            case 'Resume':
                 return <Resume />;
-            case 'My Porfolio':
+            case 'Porfolio':
                 return <Portfolio />;
                 default:
                     return <About />;

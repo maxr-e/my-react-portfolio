@@ -1,20 +1,28 @@
 import React from 'react';
-
+import { useState } from 'react';
 //import a helper function that will check if the email is valid
 import { validateEmail } from '../utils/helpers.js';
 
-export default function Contact(props) {
+export function Contact() {
+  //NOT "export default function Contact()"
   // Create state variables for the fields in the form
   // We are also setting their initial values to an empty string
   const [email, setEmail] = useState('');
   const [Name, setName] = useState('');
-  
+  const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  // const [value, setValue] = useState('');
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'ma,e') {
+      setName(value);
+    } else if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'message') {
+      setMessage(value);
+    }
     
-  }
+  };
 
   const handleFormSubmit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
@@ -40,7 +48,7 @@ export default function Contact(props) {
         <label htmlFor="name">Name*:</label>
         <input
           onChange={handleInputChange}
-          value={value}
+          value={Name}
           name="name"
           type="text" required
           className="form-control"
@@ -50,7 +58,7 @@ export default function Contact(props) {
         <label htmlFor="email">Email*:</label>
         <input
           onChange={handleInputChange}
-          value={props.value}
+          value={email}
           name="email"
           type="text" required
           className="form-control"
@@ -60,7 +68,7 @@ export default function Contact(props) {
         <label htmlFor="message">Message*:</label>
         <textarea 
           onChange={handleInputChange}
-          value={props.value}
+          value={message}
           name="message"
           type="text" required
           className="form-control"

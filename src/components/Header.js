@@ -1,12 +1,12 @@
 import '../index.css';
-import React, { useState } from 'react';
-import About from './About';
-import Contact from './Contact';
-import Portfolio from './Portfolio';
-import Resume from './Resume';
+import React from 'react';
+import { About } from '../pages/About';
+import { Contact } from '../pages/Contact';
+import { Portfolio } from '../pages/Portfolio';
+import { Resume } from '../pages/Resume';
 
 function Header(props) {
-    const [currentPage, handlePageChange] = useState();
+    // const [currentPage, handlePageChange] = useState();
     return (
         <div className='headerBody'>
             <div className='port'>
@@ -16,27 +16,28 @@ function Header(props) {
                 <ul className="navbar">
                     <li className="nav-item">
                         <button
-                        onClick={() => props.handlePageChange({About})}>About Me</button>
+                        onClick={() => props.handlePageChange(About)}>About Me</button>
                     </li>
                     <li className="nav-item">
                         <button
-                        onClick={() => handlePageChange({Portfolio})}>
+                        onClick={() => props.handlePageChange(Portfolio)}>
                         Portfolio
                         </button>
                     </li>
                     <li className="nav-item">
                         <a
-                        href="#blog"
-                        onClick={() => handlePageChange({Resume})}
-                        className={currentPage === 'Blog' ? 'nav-link active' : 'nav-link'}>
-                        Blog
+                        href="#resume"
+                        //used to be href="#blog"
+                        onClick={() => props.handlePageChange(Resume)}
+                        className={props.currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}>
+                        Resume
                         </a>
                     </li>
                     <li className="nav-item">
                         <a
                         href="#contact"
-                        onClick={() => handlePageChange({Contact})}
-                        className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}>
+                        onClick={() => props.handlePageChange(Contact)}
+                        className={props.currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}>
                         Contact
                         </a>
                     </li>
